@@ -46,7 +46,7 @@ Point Center(Point *C, int n) {
     float sumY =0;
 
     for (int i = 0; i < n; i++) {
-        sumX += *(C+i)->getX();
+        sumX += C[i].getX();
         sumY += C[i].getY();
     }
 
@@ -66,10 +66,10 @@ void closer_Cluster(Point *A, Point *B, const Point &P) {
     float distPB = P.distance(centerB);
 
     if (distPA < distPB) {
-        cout << "Point P";P.displayPoint();cout<<" is closer to Cluster A" << endl;
+        cout << "The Point ";P.displayPoint();cout<<" is closer to Cluster A" << endl;
     }
     else {
-        cout << "Point P";P.displayPoint();cout<<" is closer to Cluster B" << endl;
+        cout << "The Point ";P.displayPoint();cout<<" is closer to Cluster B" << endl;
     }
 }
 
