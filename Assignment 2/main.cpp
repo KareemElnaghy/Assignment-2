@@ -60,3 +60,33 @@ void closer_Cluster(Point *A, Point *B, const Point &P) {
         cout << "Point P";P.displayPoint();cout<<" is closer to Cluster B" << endl;
     }
 }
+
+void GenerateA(Point *A, int n) {
+    srand(time(0));
+
+    for (int i = 0; i < n; i++) {
+        float x = rand() % 21 + 70;
+        float y = rand() % 21 + 70;
+        A[i] = Point(x, y);
+    }
+}
+
+void GenerateB(Point *B, int n) {
+    srand(time(0));
+
+    for (int i = 0; i < n; i++) {
+        float x = rand() % 21 + 20;
+        float y = rand() % 21 + 20;
+        B[i] = Point(x, y);
+    }
+}
+
+void GenerateP(Point *p, int m) {
+    srand(time(0));
+
+    for (int i = 0; i < m; i++) {
+        float x = rand() % 91 + 5;
+        float y = rand() % 91 + 5;
+        p[i] = Point(x, y);
+    }
+}
