@@ -24,7 +24,19 @@ void GenerateP(Point *p, int m);
 
 int main()
 {
-    
+    Point *A = new Point[n];
+    Point *B = new Point[n];
+    Point *P = new Point[m];
+
+    GenerateA(A, n);
+    GenerateB(B, n);
+    GenerateP(P, m);
+
+    for (int i = 0; i < m; i++)
+    {
+        closer_Cluster(A, B, P[i]);
+    }
+
 }
 
 Point Center(Point *C, int n) {
