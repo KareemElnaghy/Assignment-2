@@ -46,8 +46,8 @@ Point Center(Point *C, int n) {
     float sumY =0;
 
     for (int i = 0; i < n; i++) {
-        sumX += *(C+i)->getX();
-        sumY += C[i].getY();
+        sumX += (C+i)->getX();
+        sumY += (C+i)->getY();
     }
 
     averageX = sumX / n;
