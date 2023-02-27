@@ -26,3 +26,22 @@ int main()
 {
     
 }
+
+Point Center(Point *C, int n) {
+    float averageX = 0;
+    float averageY = 0;
+    float sumX = 0;
+    float sumY =0;
+
+    for (int i = 0; i < n; i++) {
+        sumX += *(C+i)->getX();
+        sumY += C[i].getY();
+    }
+
+    averageX = sumX / n;
+    averageY = sumY / n;
+
+    Point center(averageX, averageY);
+
+    return center;
+}
