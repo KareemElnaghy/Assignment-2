@@ -45,3 +45,18 @@ Point Center(Point *C, int n) {
 
     return center;
 }
+
+void closer_Cluster(Point *A, Point *B, const Point &P) {
+    Point centerA = Center(A, n);
+    Point centerB = Center(B, n);
+
+    float distPA = P.distance(centerA);
+    float distPB = P.distance(centerB);
+
+    if (distPA < distPB) {
+        cout << "Point P";P.displayPoint();cout<<" is closer to Cluster A" << endl;
+    }
+    else {
+        cout << "Point P";P.displayPoint();cout<<" is closer to Cluster B" << endl;
+    }
+}
