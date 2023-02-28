@@ -34,7 +34,7 @@ int main()
 
     for (int i = 0; i < m; i++)
     {
-        closer_Cluster(A, B, P[i]);
+        closer_Cluster(A, B, *(P+i));
     }
 
 }
@@ -79,7 +79,7 @@ void GenerateA(Point *A, int n) {
     for (int i = 0; i < n; i++) {
         float x = rand() % 21 + 70;
         float y = rand() % 21 + 70;
-        A[i] = Point(x, y);
+        *(A+i) = Point(x, y);
     }
 }
 
@@ -89,7 +89,7 @@ void GenerateB(Point *B, int n) {
     for (int i = 0; i < n; i++) {
         float x = rand() % 21 + 20;
         float y = rand() % 21 + 20;
-        B[i] = Point(x, y);
+        *(B+i) = Point(x, y);
     }
 }
 
@@ -99,6 +99,6 @@ void GenerateP(Point *p, int m) {
     for (int i = 0; i < m; i++) {
         float x = rand() % 91 + 5;
         float y = rand() % 91 + 5;
-        p[i] = Point(x, y);
+        *(p+i) = Point(x, y);
     }
 }
