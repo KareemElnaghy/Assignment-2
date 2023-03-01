@@ -80,7 +80,7 @@ void closer_Cluster(Point *A, Point *B, const Point &P) {  //Function that deter
     }
 }
 
-void GenerateA(Point *A, int N) {           //Functions to generate random points for cluster A within 70-90
+void GenerateA(Point *A, int N) {           //Functions to generate random points for cluster A within 70-90, excluding 70 and 90.
     srand(time(0));                 //seed the random number generator
 
     for (int i = 0; i < N; i++) {
@@ -90,7 +90,7 @@ void GenerateA(Point *A, int N) {           //Functions to generate random point
     }
 }
 
-void GenerateB(Point *B, int N) {           //Functions to generate random x and y points for cluster B within 20-40
+void GenerateB(Point *B, int N) {           //Functions to generate random x and y points for cluster B within 20-40, excluding 20 and 40.
     srand(time(0));
 
     for (int i = 0; i < N; i++) {
@@ -100,7 +100,7 @@ void GenerateB(Point *B, int N) {           //Functions to generate random x and
     }
 }
 
-void GenerateP(Point *p, int M) {           //Functions to generate random x and y points within 5-100
+void GenerateP(Point *p, int M) {           //Functions to generate random x and y points within 5-100, excluding 5 and 100
     srand(time(0));
 
     for (int i = 0; i < M; i++) {
