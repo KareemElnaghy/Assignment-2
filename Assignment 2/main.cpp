@@ -84,8 +84,8 @@ void GenerateA(Point *A, int N) {           //Functions to generate random point
     srand(time(0));                 //seed the random number generator
 
     for (int i = 0; i < N; i++) {
-        float x = (rand() % 21 )+ 70;
-        float y = (rand() % 21) + 70;
+        float x = (rand() % 19)+ 71;
+        float y = (rand() % 19) + 71;
         *(A+i) = Point(x, y);
     }
 }
@@ -94,8 +94,8 @@ void GenerateB(Point *B, int N) {           //Functions to generate random x and
     srand(time(0));
 
     for (int i = 0; i < N; i++) {
-        float x = (rand() % 21) + 20;
-        float y = (rand() % 21) + 20;
+        float x = (rand() % 19) + 21;
+        float y = (rand() % 19) + 21;
         *(B+i) = Point(x, y);
     }
 }
@@ -104,8 +104,8 @@ void GenerateP(Point *p, int M) {           //Functions to generate random x and
     srand(time(0));
 
     for (int i = 0; i < M; i++) {
-        float x = (rand() % 96 )+ 5;
-        float y =(rand() % 96 )+ 5;
+        float x = (rand() % 94 )+ 6;
+        float y =(rand() % 94 )+ 6;
         *(p+i) = Point(x, y);
     }
 }
