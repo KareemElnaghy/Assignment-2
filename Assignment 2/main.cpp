@@ -73,10 +73,10 @@ void closer_Cluster(Point *A, Point *B, const Point &P) {  //Function that deter
     float distPB = P.distance(centerB);
  
     if (distPA < distPB) {   //tests to see which distance is shorter between the point and clusters and outputs the results
-        cout << "The Point ";P.displayPoint();cout<<" is closer to Cluster A" << endl;
+        cout << "The Point ";P.displayPoint();cout<<" belongs to Cluster A" << endl;
     }
     else {
-        cout << "The Point ";P.displayPoint();cout<<" is closer to Cluster B" << endl;
+        cout << "The Point ";P.displayPoint();cout<<" belongs to Cluster B" << endl;
     }
 }
 
