@@ -13,6 +13,7 @@
 #include <ctime>
 using namespace std;
 
+
 const int n = 200;      //declare the number of points to be created for both clusters
 const int m = 20;       //declare the number of points to be created
 
@@ -101,4 +102,13 @@ void GenerateP(Point *p, int m) {           //Functions to generate random x and
         float y = rand() % 96 + 5;
         *(p+i) = Point(x, y);
     }
+}
+
+void Point::displayPoint() const {         //Function to display x and y coordinate
+    cout << "(" << x << "," << y << ")";
+}
+
+float Point::distance(const Point &P) const { //Function that calculates distance between two points
+    float dist = sqrt(pow(x - P.getX(), 2) + pow(y - P.getY(), 2));
+    return dist;
 }

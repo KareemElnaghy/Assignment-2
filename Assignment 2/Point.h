@@ -17,40 +17,35 @@ class Point {
     float y;
 
 public:
-    Point() {
+    Point() {       //default constructor
         x = 0;
         y = 0;
     }
 
-    Point(float a, float b) {
+    Point(float a, float b) {       //parameterized constructor
         x = a;
         y = b;
     }
 
-    void setX(float i) {
+    void setX(float i) {            //setter for x coordinate
         x = i;
     }
 
-    float getX() const {
+    float getX() const {            //getter for x coordinate
         return x;
     }
 
-    void setY(float j) {
+    void setY(float j) {            //setter for y coordinate
         y = j;
     }
 
-    float getY() const {
+    float getY() const {            //getter for y coordinate
         return y;
     }
 
-    void displayPoint() const {
-        cout << "(" << x << "," << y << ")";
-    }
+    void displayPoint() const;      //prototype for display point function
 
-    float distance(const Point &P) const {
-        float dist = sqrt(pow(x - P.getX(), 2) + pow(y - P.getY(), 2));
-        return dist;
-    }
+    float distance(const Point &P) const;   //prototype for distance function
 };
 
 #endif /* Point_h */
