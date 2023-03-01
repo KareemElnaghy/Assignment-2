@@ -14,45 +14,51 @@
 using namespace std;
 
 
-const int n = 200;      //declare the number of points to be created for both clusters
-const int m = 20;       //declare the number of points to be created
+const int N = 200;      //declare the number of points to be created for both clusters
+const int M = 20;       //declare the number of points to be created
 
-Point Center(Point *C, int n);              //Function prototypes
+Point Center(Point *C, int N);              //Function prototypes
 void closer_Cluster(Point *A, Point *B, const Point &P);
-void GenerateA(Point *A, int n);
-void GenerateB(Point *B, int n);
-void GenerateP(Point *p, int m);
+void GenerateA(Point *A, int N);
+void GenerateB(Point *B, int N);
+void GenerateP(Point *p, int M);
 
-int main()
+int main()                  //main function
 {
-    Point *A = new Point[n];         //declare pointers that point to new array objects of type Point
-    Point *B = new Point[n];
-    Point *P = new Point[m];
+    Point *A = new Point[N];         //declare pointers that point to new array objects of type Point
+    Point *B = new Point[N];
+    Point *P = new Point[M];
 
-    GenerateA(A, n);    //call function that fills cluster A, B and points P randomly
-    GenerateB(B, n);
-    GenerateP(P, m);
+    GenerateA(A, N);    //call function that fills cluster A, B and points P randomly
+    GenerateB(B, N);
+    GenerateP(P, M);
 
-    for (int i = 0; i < m; i++)
+    Point centerA = Center(A, N);
+    Point centerB = Center(B, N);
+    
+    cout<<"Center of Cluster A: ";centerA.displayPoint();cout<<endl;
+    cout<<"Center of Cluster B: ";centerB.displayPoint();cout<<endl<<endl;
+    
+    for (int i = 0; i < M; i++)
     {
         closer_Cluster(A, B, *(P+i));    //function call to determine which cluster point P in each index is closer to
     }
 
 }
 
-Point Center(Point *C, int n) {       //Function to determine the center of the array of type Point
+Point Center(Point *C, int N) {       //Function to determine the center of the array of type Point
     float averageX = 0;
     float averageY = 0;
     float sumX = 0;
     float sumY =0;
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < N; i++) {
         sumX += (C+i)->getX();
         sumY += (C+i)->getY();
     }
 
-    averageX = sumX / n;
-    averageY = sumY / n;
+    averageX = sumX / N;
+    averageY = sumY / N;
 
     Point center(averageX, averageY);
 
@@ -60,8 +66,8 @@ Point Center(Point *C, int n) {       //Function to determine the center of the 
 }
 
 void closer_Cluster(Point *A, Point *B, const Point &P) {  //Function that determines which cluster a point belongs to
-    Point centerA = Center(A, n);   //finds center points for cluster A and B
-    Point centerB = Center(B, n);
+    Point centerA = Center(A, N);   //finds center points for cluster A and B
+    Point centerB = Center(B, N);
 
     float distPA = P.distance(centerA);  //Finds the distance between point P and the clusters and outputs results
     float distPB = P.distance(centerB);
@@ -74,32 +80,32 @@ void closer_Cluster(Point *A, Point *B, const Point &P) {  //Function that deter
     }
 }
 
-void GenerateA(Point *A, int n) {           //Functions to generate random points for cluster A within 70-90
+void GenerateA(Point *A, int N) {           //Functions to generate random points for cluster A within 70-90
     srand(time(0));                 //seed the random number generator
 
-    for (int i = 0; i < n; i++) {
-        float x = rand() % 21 + 70;
-        float y = rand() % 21 + 70;
+    for (int i = 0; i < N; i++) {
+        float x = (rand() % 21 )+ 70;
+        float y = (rand() % 21) + 70;
         *(A+i) = Point(x, y);
     }
 }
 
-void GenerateB(Point *B, int n) {           //Functions to generate random x and y points for cluster B within 20-40
+void GenerateB(Point *B, int N) {           //Functions to generate random x and y points for cluster B within 20-40
     srand(time(0));
 
-    for (int i = 0; i < n; i++) {
-        float x = rand() % 21 + 20;
-        float y = rand() % 21 + 20;
+    for (int i = 0; i < N; i++) {
+        float x = (rand() % 21) + 20;
+        float y = (rand() % 21) + 20;
         *(B+i) = Point(x, y);
     }
 }
 
-void GenerateP(Point *p, int m) {           //Functions to generate random x and y points within 5-100
+void GenerateP(Point *p, int M) {           //Functions to generate random x and y points within 5-100
     srand(time(0));
 
-    for (int i = 0; i < m; i++) {
-        float x = rand() % 96 + 5;
-        float y = rand() % 96 + 5;
+    for (int i = 0; i < M; i++) {
+        float x = (rand() % 96 )+ 5;
+        float y =(rand() % 96 )+ 5;
         *(p+i) = Point(x, y);
     }
 }
