@@ -27,21 +27,13 @@ public:
         y = b;
     }
 
-    void setX(float i) {            //setter for x coordinate
-        x = i;
-    }
+    void setX(float i);             //prototypes for setters and getters
 
-    float getX() const {            //getter for x coordinate
-        return x;
-    }
+    float getX() const;
 
-    void setY(float j) {            //setter for y coordinate
-        y = j;
-    }
+    void setY(float j);
 
-    float getY() const {            //getter for y coordinate
-        return y;
-    }
+    float getY() const;
 
     void displayPoint() const;      //prototype for display point function
 

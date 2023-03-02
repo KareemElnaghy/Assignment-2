@@ -118,3 +118,19 @@ float Point::distance(const Point &P) const { //Function that calculates distanc
     float dist = sqrt(pow(x - P.getX(), 2) + pow(y - P.getY(), 2));
     return dist;
 }
+
+void Point::setX(float i) {            //setter for x coordinate
+    x = i;
+}
+
+float Point::getX() const {            //getter for x coordinate
+    return x;
+}
+
+void Point::setY(float j) {            //setter for y coordinate
+    y = j;
+}
+
+float Point::getY() const {            //getter for y coordinate
+    return y;
+}
