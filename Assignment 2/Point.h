@@ -26,6 +26,10 @@ public:
         x = a;
         y = b;
     }
+    
+∼Point()
+{
+}
 
     void setX(float i);             //prototypes for setters and getters
 
