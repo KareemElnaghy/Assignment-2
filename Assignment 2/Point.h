@@ -27,7 +27,7 @@ public:
         y = b;
     }
     
-∼Point()
+~Point()           //destructor
 {
 }
 
