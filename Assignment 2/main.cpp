@@ -23,7 +23,7 @@ void GenerateA(Point *A, int N);
 void GenerateB(Point *B, int N);
 void GenerateP(Point *p, int M);
 
-int main()                  //main function
+int main()                            //main function
 {
     Point *A = new Point[N];         //declare pointers that point to new array objects of type Point
     Point *B = new Point[N];
@@ -75,8 +75,12 @@ void closer_Cluster(Point *A, Point *B, const Point &P) {  //Function that deter
     if (distPA < distPB) {   //tests to see which distance is shorter between the point and clusters and outputs the results
         cout << "The Point ";P.displayPoint();cout<<" belongs to Cluster A" << endl;
     }
-    else {
+    else if(distPA > distPB) {
         cout << "The Point ";P.displayPoint();cout<<" belongs to Cluster B" << endl;
+    }
+    else
+    {
+        cout << "The Point ";P.displayPoint();cout<<" is distance equally between both Cluster A and B" << endl;     //Unlikely, but incase the distance is equal to both clusters
     }
 }
 
