@@ -33,7 +33,7 @@ public:             //Prototyping
     float distance(const Point & ) const;   //prototype for distance function
 };
 
-Point Center(Point *, int );              //Function prototypes
+Point Center(Point *, int );              //Additional Function prototypes
 void closer_Cluster(Point *, Point *, const Point &);
 void GenerateA(Point *, int );
 void GenerateB(Point *, int );
