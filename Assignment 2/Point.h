@@ -8,40 +8,35 @@
 #ifndef Point_h
 #define Point_h
 
-#include <cmath>
-#include <iostream>
-using namespace std;
 
 class Point {
     float x;
     float y;
 
-public:
-    Point() {       //default constructor
-        x = 0;
-        y = 0;
-    }
-
-    Point(float a, float b) {       //parameterized constructor
-        x = a;
-        y = b;
-    }
+public:             //Prototyping
+    Point();       //default constructor
     
-~Point()           //destructor
-{
-}
+    Point(float , float );      //parameterized constructor
+    
+    ~Point();          //destructor
 
-    void setX(float i);             //prototypes for setters and getters
+    void setX(float );             //prototypes for setters and getters
 
     float getX() const;
 
-    void setY(float j);
+    void setY(float );
 
     float getY() const;
 
     void displayPoint() const;      //prototype for display point function
 
-    float distance(const Point &P) const;   //prototype for distance function
+    float distance(const Point & ) const;   //prototype for distance function
 };
+
+Point Center(Point *, int );              //Function prototypes
+void closer_Cluster(Point *, Point *, const Point &);
+void GenerateA(Point *, int );
+void GenerateB(Point *, int );
+void GenerateP(Point *, int );
 
 #endif /* Point_h */
